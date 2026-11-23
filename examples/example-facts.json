@@ -1,0 +1,32 @@
+{
+  "_note": "EXAMPLE DATA, invented. Not from any real company.",
+  "facts": [
+    {"id": "rev_2024", "label": "Revenue 2024", "value": 1000000, "unit": "money"},
+    {"id": "rev_2025", "label": "Revenue 2025", "value": 1250000, "unit": "money"},
+    {"id": "cost_2025", "label": "Costs 2025", "value": 900000, "unit": "money"},
+    {"id": "debt", "label": "Outstanding loans", "value": 400000, "unit": "money"},
+    {"id": "late", "label": "Invoices paid late", "value": 18, "unit": "count"},
+    {"id": "invoices", "label": "Invoices issued", "value": 120, "unit": "count"},
+    {"id": "margin", "label": "Reported margin", "value": 28, "unit": "pct"}
+  ],
+  "cases": [
+    {"name": "direct values, rounded",
+     "answer": "Revenue in 2025 was £1.25m, and costs were $900k.",
+     "expected": {"£1.25m": "traced", "$900k": "traced"}},
+    {"name": "growth worked out from two facts",
+     "answer": "Revenue grew 25% from 2024 to 2025.",
+     "expected": {"25%": "derived"}},
+    {"name": "invented number",
+     "answer": "Revenue was £1.8m in 2025.",
+     "expected": {"£1.8m": "untraced"}},
+    {"name": "share of late invoices",
+     "answer": "15% of the 120 invoices were paid late.",
+     "expected": {"15%": "derived", "120": "traced"}},
+    {"name": "year is not a claim",
+     "answer": "In 2025 the margin was 28%.",
+     "expected": {"28%": "traced"}},
+    {"name": "wrong sum",
+     "answer": "Costs plus loans come to £1.5m.",
+     "expected": {"£1.5m": "untraced"}}
+  ]
+}
